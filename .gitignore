@@ -1,0 +1,16 @@
+.DS_Store
+.DS_Store?
+*.elc
+*~
+*.dat
+/.mc-lists.el
+.cask/
+bookmarks
+projectile-bookmarks.eld
+/.saves
+elpa/
+/auto-save-list
+/eshell
+/var
+projectile.cache
+custom.el
