@@ -9,6 +9,7 @@
 ;;; License:
 ;; MIT
 
+(setq-default ispell-program-name "/usr/bin/aspell")
 (setq backup-directory-alist
       `((".*" . ,"~/.emacs.d/.saves/")))
 
@@ -33,7 +34,7 @@
 (set-face-attribute 'default nil :height 122)
 (let ((default-directory "/usr/local/share/emacs/site-lisp/"))
   (normal-top-level-add-subdirs-to-load-path))
-(require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
+(require 'cask "/home/hparker/.cask/cask.el")
 (cask-initialize)
 
 (setq inhibit-startup-message t)
@@ -48,23 +49,24 @@
 (global-hl-line-mode)
 
 (setq whitespace-line-column 80) ;; limit line length
-(setq whitespace-style '(face lines-tail))
-(global-whitespace-mode +1)
+(setq whitespace-style '(face empty tabs lines-tail trailing))
+(global-whitespace-mode t)
 
 
 (setq default-directory "~/")
 (smart-mode-line-enable)
-(setq god-exempt-major-modes nil)
-(setq god-exempt-predicates nil)
 
 (god-mode-all)
 
 (global-set-key (kbd "<escape>") (lambda () (interactive) (god-local-mode-resume)))
 (define-key god-local-mode-map (kbd "i") (lambda () (interactive) (god-local-mode-pause)))
 (define-key god-local-mode-map (kbd "j") 'ace-jump-mode)
-(define-key god-local-mode-map (kbd ";") 'undo-tree-visualize)
 (define-key god-local-mode-map (kbd ".") 'repeat)
 
+(global-set-key (kbd "C-;") 'undo-tree-visualize)
+(global-set-key (kbd "M-s") 'helm-do-ag-project-root)
+(global-set-key (kbd "C-s") 'helm-swoop)
+(global-set-key (kbd "C-:") 'execute-extended-command)
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "C-c b") 'magit-blame)
 (global-set-key (kbd "C-x g") 'magit-status)
@@ -94,7 +96,6 @@
 
 (undo-tree-mode)
 
-(setq ispell-program-name "/usr/local/bin/ispell")
 (flyspell-mode t)
 (flyspell-prog-mode)
 
@@ -103,7 +104,7 @@
 (projectile-global-mode)
 
 (add-hook 'after-init-hook 'global-company-mode)
-
+(add-hook 'after-init-hook #'global-flycheck-mode)
 (global-rbenv-mode t)
 
 (add-hook 'ruby-mode-hook 'rubocop-mode)
