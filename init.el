@@ -34,7 +34,12 @@
 (set-face-attribute 'default nil :height 122)
 (let ((default-directory "/usr/local/share/emacs/site-lisp/"))
   (normal-top-level-add-subdirs-to-load-path))
-(require 'cask "/home/hparker/.cask/cask.el")
+(if (eq system-type 'darwin)
+  ; something for OS X if true
+    (require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
+  (require 'cask "/home/hparker/.cask/cask.el")
+)
+
 (cask-initialize)
 
 (setq inhibit-startup-message t)
