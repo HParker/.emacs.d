@@ -39,8 +39,7 @@
     (progn
       (setq ispell-program-name "/usr/local/bin/ispell")
       (require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el"))
-  (require 'cask "/home/hparker/.cask/cask.el")
-)
+  (require 'cask "/home/hparker/.cask/cask.el"))
 
 (cask-initialize)
 
