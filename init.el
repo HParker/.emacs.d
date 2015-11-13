@@ -9,6 +9,7 @@
 ;;; License:
 ;; MIT
 
+(add-to-list 'exec-path "/usr/local/bin")
 (setq-default ispell-program-name "/usr/bin/aspell")
 (setq backup-directory-alist
       `((".*" . ,"~/.emacs.d/.saves/")))
@@ -35,8 +36,9 @@
 (let ((default-directory "/usr/local/share/emacs/site-lisp/"))
   (normal-top-level-add-subdirs-to-load-path))
 (if (eq system-type 'darwin)
-  ; something for OS X if true
-    (require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
+    (progn
+      (setq ispell-program-name "/usr/local/bin/ispell")
+      (require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el"))
   (require 'cask "/home/hparker/.cask/cask.el")
 )
 
@@ -75,6 +77,10 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "C-c b") 'magit-blame)
 (global-set-key (kbd "C-x g") 'magit-status)
+
+(custom-set-variables
+ '(helm-ag-base-command "/usr/local/bin/ag --nocolor --nogroup --ignore-case")
+ '(helm-ag-insert-at-point 'symbol))
 
 (defun god-cursor-update ()
   (setq cursor-type (if (or god-local-mode buffer-read-only)
