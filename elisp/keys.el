@@ -18,6 +18,9 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "C-c b") 'magit-blame)
 (global-set-key (kbd "C-c g") 'magit-status)
+;; super bindings
+(define-key global-map [?\s-t] 'split-window-right)
+(define-key global-map [?\s-w] 'delete-window)
 
 (provide 'keys)
 ;;; keys.el ends here

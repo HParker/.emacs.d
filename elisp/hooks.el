@@ -15,6 +15,6 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'ruby-mode-hook 'robe-mode)
 (add-hook 'ruby-mode-hook 'rubocop-mode)
-
+(add-hook 'prog-mode-hook 'subword-mode)
 (provide 'hooks)
 ;;; hooks.el ends here
