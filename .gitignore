@@ -3,6 +3,7 @@
 *.elc
 *~
 *.dat
+.emacs-custom.el
 /.mc-lists.el
 .cask/
 bookmarks
