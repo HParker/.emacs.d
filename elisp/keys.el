@@ -10,7 +10,7 @@
 (define-key god-local-mode-map (kbd ".") 'repeat)
 ;; regular key bindings
 (global-set-key (kbd "C-;") 'undo-tree-visualize)
-(global-set-key (kbd "C-/") 'comment-or-uncomment-region)
+(global-set-key (kbd "C-#") 'comment-or-uncomment-region)
 (global-set-key (kbd "M-s") 'helm-do-ag-project-root)
 (global-set-key (kbd "C-s") 'helm-swoop)
 (global-set-key (kbd "C-r") 'helm-swoop)

@@ -8,8 +8,8 @@
 ;;
 ;;; License:
 ;; MIT
-
 ;;; code:
+
 (setq custom-file "~/.emacs.d/.emacs-cusom.el")
 (load custom-file)
 
@@ -35,6 +35,9 @@
 (load-library "modes")
 (load-library "keys")
 (load-library "hooks")
+
+(add-to-list 'sml/replacer-regexp-list '("^~/code/" ":C:") t)
+
 
 (eval-after-load 'company
   '(push 'company-robe company-backends))

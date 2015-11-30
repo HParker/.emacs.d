@@ -4,7 +4,7 @@
 
 ;;; code:
 (set-face-attribute 'default nil :height 122)
-
+(yas-global-mode)
 (helm-projectile-on)
 (helm-mode 1)
 (projectile-global-mode)
