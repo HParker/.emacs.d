@@ -17,4 +17,5 @@
 
 (setq projectile-mode-line '(:eval (format " P[%s]" (projectile-project-name))))
 (setq wilt-mode-line-template " W=%.2f")
-(setq rm-blacklist (quote (" WS" " SP" " Helm" " Fly" " company" " RuboCop" " ," " robe")))
+(setq rm-blacklist
+      (quote (" WS" " SP" " Helm" " Fly" " company" " RuboCop" " ," " robe" " yas")))

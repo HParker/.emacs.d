@@ -41,5 +41,5 @@
 (setq helm-swoop-split-direction 'split-window-horizontally)
 
 ;; disable pre-input
-(setq helm-swoop-pre-input-function
-      (lambda () ""))
+;; (setq helm-swoop-pre-input-function
+;;       (lambda () ""))

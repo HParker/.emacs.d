@@ -38,7 +38,6 @@
 
 (add-to-list 'sml/replacer-regexp-list '("^~/code/" ":C:") t)
 
-
 (eval-after-load 'company
   '(push 'company-robe company-backends))
 
