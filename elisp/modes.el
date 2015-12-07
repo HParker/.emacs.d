@@ -3,7 +3,7 @@
 ;; Provides mode configuration
 
 ;;; code:
-(set-face-attribute 'default nil :height 122)
+;; (set-face-attribute 'default nil :height 130)
 (yas-global-mode)
 (helm-projectile-on)
 (helm-mode 1)
@@ -16,15 +16,21 @@
 
 (global-auto-revert-mode t)
 
-
-(show-paren-mode t)
-(smartparens-global-mode)
+(show-smartparens-global-mode t)
+(smartparens-global-mode t)
 (pallet-mode t)
 
 
 (delete-selection-mode 1)
 (smart-mode-line-enable)
 (god-mode-all)
+
+(eval-after-load 'eshell
+  '(require 'eshell-autojump nil t))
+
+(eval-after-load 'company
+  '(push 'company-robe company-backends))
+(eshell-did-you-mean-setup)
 
 (provide 'modes)
 ;;; modes.el ends here

@@ -31,6 +31,10 @@
 (setq visible-bell nil
       ring-bell-function 'flash-bell)
 
+
+(setq web-mode-markup-indent-offset 2)
+(setq web-mode-css-indent-offset 2)
+(setq web-mode-code-indent-offset 2)
 ;; Save buffer when helm-multi-swoop-edit complete
 (setq helm-multi-swoop-edit-save t)
 
@@ -40,6 +44,13 @@
 ;; Split direcion. 'split-window-vertically or 'split-window-horizontally
 (setq helm-swoop-split-direction 'split-window-horizontally)
 
-;; disable pre-input
-;; (setq helm-swoop-pre-input-function
-;;       (lambda () ""))
+(add-to-list 'auto-mode-alist '("\\.tmpl\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+
+(add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
+(setq web-mode-enable-current-column-highlight t)
+(setq web-mode-ac-sources-alist
+  '(("css" . (ac-source-css-property))
+    ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
