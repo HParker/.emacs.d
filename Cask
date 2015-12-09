@@ -3,6 +3,7 @@
 (source melpa-stable)
 
 (depends-on "ace-jump-mode")
+(depends-on "ag")
 (depends-on "async")
 (depends-on "bind-key")
 (depends-on "cask")
@@ -15,6 +16,7 @@
 (depends-on "eshell-autojump")
 (depends-on "eshell-did-you-mean")
 (depends-on "eshell-prompt-extras")
+(depends-on "exec-path-from-shell")
 (depends-on "expand-region")
 (depends-on "flycheck")
 (depends-on "flycheck-color-mode-line")
@@ -53,4 +55,5 @@
 (depends-on "whitespace-cleanup-mode")
 (depends-on "wilt")
 (depends-on "with-editor")
+(depends-on "yaml-mode")
 (depends-on "yasnippet")

@@ -16,6 +16,7 @@
  '(helm-ag-insert-at-point 'symbol))
 
 (setq ruby-insert-encoding-magic-comment nil)
+(setq enh-ruby-add-encoding-comment-on-save nil)
 (setq default-directory "~/")
 
 (setq backup-directory-alist
