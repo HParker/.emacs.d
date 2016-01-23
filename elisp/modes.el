@@ -3,7 +3,6 @@
 ;; Provides mode configuration
 
 ;;; code:
-;; (set-face-attribute 'default nil :height 130)
 (yas-global-mode)
 (helm-projectile-on)
 (helm-mode 1)
