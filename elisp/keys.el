@@ -11,6 +11,8 @@
 (define-key god-local-mode-map (kbd "J") 'robe-jump)
 (define-key god-local-mode-map (kbd "U") 'undo-tree-visualize)
 ;; regular key bindings
+(global-set-key (kbd "C-z") (lambda () (interactive) (god-local-mode-resume)))
+(global-set-key (kbd "C-Z") (lambda () (interactive) (god-local-mode-resume)))
 (global-set-key (kbd "M-;") 'comment-or-uncomment-region)
 (global-set-key (kbd "M-s") 'helm-do-ag-project-root)
 (global-set-key (kbd "C-s") 'helm-swoop)

@@ -1,4 +1,5 @@
 (setq inhibit-startup-message t)
+(set-face-attribute 'default nil :height 160)
 
 (load-theme 'monokai t)
 (global-hl-line-mode)
