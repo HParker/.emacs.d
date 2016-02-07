@@ -10,7 +10,7 @@
 ;; MIT
 ;;; code:
 
-(setq custom-file "~/.emacs.d/.emacs-cusom.el")
+(setq custom-file "~/.emacs.d/.emacs-custom.el")
 (load custom-file)
 
 (let ((default-directory "/usr/local/share/emacs/site-lisp/"))

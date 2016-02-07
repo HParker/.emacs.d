@@ -19,6 +19,7 @@
 (depends-on "eshell-prompt-extras")
 (depends-on "exec-path-from-shell")
 (depends-on "expand-region")
+(depends-on "fireplace")
 (depends-on "flycheck")
 (depends-on "flycheck-color-mode-line")
 (depends-on "git-commit")
