@@ -9,6 +9,8 @@
 
 (blink-cursor-mode 0)
 
+(set-face-attribute 'default nil :height 140)
+
 (if (display-graphic-p)
     (progn
       (tool-bar-mode -1)

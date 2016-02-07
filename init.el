@@ -41,5 +41,8 @@
 (eval-after-load 'company
   '(push 'company-robe company-backends))
 
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
+
 (provide 'init)
 ;;; init.el ends here

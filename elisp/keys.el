@@ -25,6 +25,7 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-z") (lambda () (interactive) (god-local-mode-resume)))
 
 ;; not all of these are working. I need to revisit the blog post about it
 (bind-keys
