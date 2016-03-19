@@ -29,7 +29,6 @@
 
 (eval-after-load 'company
   '(push 'company-robe company-backends))
-(eshell-did-you-mean-setup)
 
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
 (defadvice web-mode-highlight-part (around tweak-jsx activate)
