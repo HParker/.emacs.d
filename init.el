@@ -36,6 +36,9 @@
 (load-library "keys")
 (load-library "hooks")
 
+(when (fboundp 'windmove-default-keybindings)
+  (windmove-default-keybindings))
+
 (eval-after-load 'company
   '(push 'company-robe company-backends))
 
