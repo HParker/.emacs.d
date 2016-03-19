@@ -15,3 +15,6 @@ elpa/
 /var
 projectile.cache
 custom.el
+/emojis/
+/snippets/
+/tramp
