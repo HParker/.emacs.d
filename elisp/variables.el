@@ -50,7 +50,7 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 
-(add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
+;; (add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
 (setq web-mode-enable-current-column-highlight t)
 (setq web-mode-ac-sources-alist
   '(("css" . (ac-source-css-property))

@@ -30,6 +30,14 @@
 
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
+;;; Fix junk characters in shell-mode
+(require 'ansi-color)
+(defun my/ansi-colorize-buffer ()
+  (let ((buffer-read-only nil))
+    (ansi-color-apply-on-region (point-min) (point-max))))
+(add-hook 'compilation-filter-hook 'my/ansi-colorize-buffer)
+
+
 ;; (eval-after-load "flycheck"
 ;;   '(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode))
 
