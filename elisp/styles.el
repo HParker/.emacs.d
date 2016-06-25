@@ -16,6 +16,6 @@
       (fringe-mode 10)))
 (menu-bar-mode -1)
 
-(setq projectile-mode-line '(:eval (format " P[%s]" (projectile-project-name))))
+(setq projectile-mode-line '(:eval (format " [%s]" (projectile-project-name))))
 (setq rm-blacklist
       (quote (" WS" " SP" " Helm" " Fly" " company" " RuboCop" " ," " robe" " yas")))

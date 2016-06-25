@@ -17,7 +17,6 @@
 (add-hook 'prog-mode-hook 'yas-minor-mode)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
-
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'before-save-hook 'gofmt-before-save)
 
@@ -25,9 +24,9 @@
 (add-hook 'ruby-mode-hook 'rbenv-use-corresponding)
 (add-hook 'ruby-mode-hook 'rubocop-mode)
 
-(add-hook 'enh-ruby-mode-hook 'robe-mode)
+(add-hook 'ruby-mode-hook 'robe-mode)
 (add-hook 'enh-yaruby-mode-hook 'rbenv-use-corresponding)
-(add-hook 'enh-ruby-mode-hook 'rubocop-mode)
+(add-hook 'ruby-mode-hook 'rubocop-mode)
 
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 

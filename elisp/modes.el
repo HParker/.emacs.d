@@ -20,6 +20,9 @@
 (pallet-mode t)
 
 
+ (add-to-list 'auto-mode-alist
+               '("\\.\\(?:cap\\|gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode))
+
 (delete-selection-mode 1)
 (smart-mode-line-enable)
 (god-mode-all)
