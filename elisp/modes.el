@@ -24,6 +24,13 @@
 (smart-mode-line-enable)
 (god-mode-all)
 
+(setq locale-coding-system 'utf-8)
+(set-terminal-coding-system 'utf-8-unix)
+(set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
+
 (eval-after-load 'eshell
   '(require 'eshell-autojump nil t))
 
