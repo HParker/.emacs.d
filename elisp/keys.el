@@ -6,14 +6,11 @@
 ;; god keys
 (global-set-key (kbd "<escape>") (lambda () (interactive) (god-local-mode-resume)))
 (define-key god-local-mode-map (kbd "i") (lambda () (interactive) (god-local-mode-pause)))
-(define-key god-local-mode-map (kbd "j") 'ace-jump-mode)
 (define-key god-local-mode-map (kbd ".") 'repeat)
-(define-key god-local-mode-map (kbd "J") 'robe-jump)
 
 ;; regular key bindings
-(global-set-key (kbd "C-z") (lambda () (interactive) (god-local-mode-resume)))
-(global-set-key (kbd "C-Z") (lambda () (interactive) (god-local-mode-resume)))
-<<<<<<< HEAD
+(global-set-key (kbd "C-z")     (lambda () (interactive) (god-local-mode-resume)))
+(global-set-key (kbd "C-Z")     (lambda () (interactive) (god-local-mode-resume)))
 (global-set-key (kbd "M-;")     #'comment-or-uncomment-region)
 (global-set-key (kbd "C-U")     #'undo-tree-visualize)
 (global-set-key (kbd "M-s")     #'helm-do-ag-project-root)
@@ -30,8 +27,8 @@
 (global-set-key (kbd "M-x")     #'helm-M-x)
 (global-set-key (kbd "C-x C-f") #'helm-find-files)
 (global-set-key (kbd "C-j")     #'avy-goto-word-1)
-(global-set-key (kbd "s-r") 'recompile)
-(global-set-key (kbd "C-k")                    #'smart-kill-line)
+(global-set-key (kbd "s-r")     #'recompile)
+(global-set-key (kbd "C-k")     #'smart-kill-line)
 
 ;; CRUX bindings
 (global-set-key [remap move-beginning-of-line] #'crux-move-beginning-of-line)
