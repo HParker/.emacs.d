@@ -7,7 +7,7 @@
 
 (setq-default indent-tabs-mode nil)
 (setq tab-width 2)
-(setq default-tab-width 2) ; for go. because go uses tabs and go mode doesn't listen to tab width'
+(setq tab-width 2) ; for go. because go uses tabs and go mode doesn't listen to tab width'
 
 (setq helm-candidate-number-limit 25)
 (setq helm-split-window-in-side-p t)
@@ -56,3 +56,6 @@
 (setq web-mode-ac-sources-alist
   '(("css" . (ac-source-css-property))
     ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
+
+(provide 'variables)
+;; variables.el ends here

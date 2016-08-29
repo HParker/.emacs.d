@@ -44,10 +44,5 @@
 (eval-after-load 'rspec-mode
  '(rspec-install-snippets))
 
-(with-eval-after-load "esh-opt"
-  (autoload 'epe-theme-lambda "eshell-prompt-extras")
-  (setq eshell-highlight-prompt nil
-        eshell-prompt-function 'epe-theme-lambda))
-
 (provide 'hooks)
 ;;; hooks.el ends here

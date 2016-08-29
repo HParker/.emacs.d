@@ -11,13 +11,13 @@
 ;;; code:
 
 (setq custom-file "~/.emacs.d/.emacs-custom.el")
-(load custom-file)
+(load custom-file 'noerror)
 
 (setq user-full-name "Adam Hess"
       user-mail-address "adamhess1991@gmail.com")
 
 ;; Always load newest byte code
-(setq load-prefer-newer t)
+;; (setq load-prefer-newer t)
 
 ;; reduce the frequency of garbage collection by making it happen on
 ;; each 50MB of allocated data (the default is on every 0.76MB)
@@ -59,12 +59,12 @@
 
 (add-to-list 'exec-path "/usr/local/bin")
 (add-to-list 'load-path "~/.emacs.d/elisp/")
-(load-library "functions")
-(load-library "variables")
-(load-library "styles")
-(load-library "modes")
-(load-library "keys")
-(load-library "hooks")
+(require 'functions)
+(require 'variables)
+(require 'styles)
+(require 'modes)
+(require 'keys)
+(require 'hooks)
 
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))

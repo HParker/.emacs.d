@@ -19,3 +19,6 @@
 (setq projectile-mode-line '(:eval (format " [%s]" (projectile-project-name))))
 (setq rm-blacklist
       (quote (" WS" " SP" " Helm" " Fly" " company" " RuboCop" " ," " robe" " yas")))
+
+(provide 'styles)
+;; styles.el ends here
