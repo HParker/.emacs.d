@@ -8,6 +8,7 @@
 (helm-mode 1)
 (projectile-global-mode)
 (undo-tree-mode)
+(global-anzu-mode)
 
 (flyspell-mode t)
 (flyspell-prog-mode)

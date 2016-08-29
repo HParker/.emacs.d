@@ -29,11 +29,11 @@
 (global-set-key (kbd "C-j")     #'avy-goto-word-1)
 (global-set-key (kbd "s-r")     #'recompile)
 (global-set-key (kbd "C-k")     #'smart-kill-line)
-
+(global-set-key (kbd "M-%")     #'anzu-query-replace)
 ;; CRUX bindings
 (global-set-key [remap move-beginning-of-line] #'crux-move-beginning-of-line)
 (global-set-key (kbd "C-o")                    #'crux-smart-open-line)
-
+(global-set-key (kbd "C-c s") #'crux-ispell-word-then-abbrev)
 
 (provide 'keys)
 ;;; keys.el ends here

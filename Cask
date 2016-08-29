@@ -3,6 +3,7 @@
 
 (depends-on "ag")
 (depends-on "ample-theme")
+(depends-on "anzu")
 (depends-on "async")
 (depends-on "avy")
 (depends-on "bind-key")
@@ -46,6 +47,7 @@
 (depends-on "popup")
 (depends-on "projectile")
 (depends-on "rainbow-delimiters")
+(depends-on "rainbow-mode")
 (depends-on "rbenv")
 (depends-on "rich-minority")
 (depends-on "robe")
