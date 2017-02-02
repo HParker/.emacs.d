@@ -21,6 +21,7 @@
 (smartparens-global-mode t)
 (pallet-mode t)
 
+(erc-colorize-mode 1)
 
 (add-to-list 'auto-mode-alist
              '("\\.\\(?:cap\\|gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode))

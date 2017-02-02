@@ -13,8 +13,7 @@
 (setq helm-split-window-in-side-p t)
 
 (custom-set-variables
- '(helm-ag-base-command "/usr/local/bin/ag --nocolor --nogroup --ignore-case")
- '(helm-ag-insert-at-point 'symbol))
+ '(helm-ag-base-command "rg --no-heading --smart-case"))
 
 (setq ruby-insert-encoding-magic-comment nil)
 (setq enh-ruby-add-encoding-comment-on-save nil)

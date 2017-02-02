@@ -3,6 +3,13 @@
 ;; Provides functions for use later
 
 ;;; code:
+(defun iwb ()
+  "indent whole buffer"
+  (interactive)
+  (delete-trailing-whitespace)
+  (indent-region (point-min) (point-max) nil)
+  (untabify (point-min) (point-max)))
+
 (require 'crux)
 (defun god-cursor-update ()
   "Change the cursor to box when god-mode is enabled and to bar when inserting."

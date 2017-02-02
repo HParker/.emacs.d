@@ -17,6 +17,7 @@
 (depends-on "elm-mode")
 (depends-on "emojify")
 (depends-on "enh-ruby-mode")
+(depends-on "erc-colorize")
 (depends-on "eshell-prompt-extras")
 (depends-on "exec-path-from-shell")
 (depends-on "expand-region")
