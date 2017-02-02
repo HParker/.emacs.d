@@ -3,7 +3,7 @@
 ;; Provides functions for use later
 
 ;;; code:
-(defun iwb ()
+(defun indent-buffer ()
   "indent whole buffer"
   (interactive)
   (delete-trailing-whitespace)
@@ -33,7 +33,7 @@
         (kill-line))
       )))
 
-(defun uniquify-all-lines-region (start end)
+(defun unique-lines-in-region (start end)
     "Find duplicate lines in region START to END keeping first occurrence."
     (interactive "*r")
     (save-excursion
@@ -44,10 +44,10 @@
               (re-search-forward "^\\(.*\\)\n\\(\\(.*\n\\)*\\)\\1\n" end t))
           (replace-match "\\1\n\\2")))))
 
-(defun uniquify-all-lines-buffer ()
+(defun unique-lines-in-buffer ()
   "Delete duplicate lines in buffer and keep first occurrence."
   (interactive "*")
-  (uniquify-all-lines-region (point-min) (point-max)))
+  (unique-lines-in-region (point-min) (point-max)))
 
 
 (provide 'functions)

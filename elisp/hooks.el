@@ -30,6 +30,12 @@
 
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
+(add-hook
+ 'ponylang-mode-hook
+ (lambda ()
+   (set-variable 'indent-tabs-mode nil)
+   (set-variable 'tab-width 2)))
+
 ;;; Fix junk characters in shell-mode
 (require 'ansi-color)
 (defun my/ansi-colorize-buffer ()
