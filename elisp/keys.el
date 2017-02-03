@@ -30,6 +30,7 @@
 (global-set-key (kbd "s-r")     #'recompile)
 (global-set-key (kbd "C-k")     #'smart-kill-line)
 (global-set-key (kbd "M-%")     #'anzu-query-replace)
+(global-set-key (kbd "M-y")     #'helm-show-kill-ring)
 ;; CRUX bindings
 (global-set-key [remap move-beginning-of-line] #'crux-move-beginning-of-line)
 (global-set-key (kbd "C-o")                    #'crux-smart-open-line)
