@@ -40,5 +40,7 @@
   '(("css" . (ac-source-css-property))
     ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
 
+(setq tramp-default-method "ssh")
+
 (provide 'variables)
 ;; variables.el ends here
