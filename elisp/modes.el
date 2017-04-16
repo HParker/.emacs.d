@@ -2,11 +2,9 @@
 ;;; Commentary:
 ;; Provides mode configuration
 
-
 ;;; code:
 (yas-global-mode)
-(helm-projectile-on)
-(helm-mode 1)
+(counsel-projectile-on)
 (projectile-global-mode)
 (undo-tree-mode)
 (global-anzu-mode)
@@ -22,7 +20,10 @@
 (pallet-mode t)
 
 (add-to-list 'auto-mode-alist
-             '("\\.\\(?:cap\\|gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\|pp\\)\\'" . ruby-mode))
+             '("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode))
+
+(add-to-list 'auto-mode-alist
+             '("\\.\\(?:tmpl\\|erb\\|mustache\\|djhtml\\)\\'" . web-mode))
 
 (delete-selection-mode 1)
 (smart-mode-line-enable)

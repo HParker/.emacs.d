@@ -3,12 +3,11 @@
 ;; Provides hook configuration
 
 ;;; code:
-(add-hook 'god-mode-enabled-hook 'god-cursor-update)
-(add-hook 'god-mode-disabled-hook 'god-cursor-update)
+(add-hook 'god-mode-enabled-hook 'god-cursor-on)
+(add-hook 'god-mode-disabled-hook 'god-cursor-off)
 
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'after-init-hook 'global-flycheck-mode)
-(add-hook 'after-init-hook 'global-emojify-mode)
 
 (add-hook 'text-mode-hook 'flyspell-mode)
 
@@ -18,7 +17,6 @@
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-(add-hook 'before-save-hook 'gofmt-before-save)
 
 (add-hook 'ruby-mode-hook 'robe-mode)
 (add-hook 'ruby-mode-hook 'rbenv-use-corresponding)
@@ -28,13 +26,15 @@
 (add-hook 'enh-yaruby-mode-hook 'rbenv-use-corresponding)
 (add-hook 'ruby-mode-hook 'rubocop-mode)
 
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+(add-hook 'rust-mode-hook 'racer-mode)
+(add-hook 'racer-mode-hook 'eldoc-mode)
 
-(add-hook
- 'ponylang-mode-hook
- (lambda ()
-   (set-variable 'indent-tabs-mode nil)
-   (set-variable 'tab-width 2)))
+(add-hook 'racer-mode-hook 'company-mode)
+
+(add-hook 'flycheck-mode-hook 'flycheck-rust-setup)
+
+
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 ;;; Fix junk characters in shell-mode
 (require 'ansi-color)

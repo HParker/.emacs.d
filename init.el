@@ -46,10 +46,6 @@
 ;; Newline at end of file
 (setq require-final-newline t)
 
-;; delete the selection with a keypress
-(delete-selection-mode t)
-
-
 (let ((default-directory "/usr/local/share/emacs/site-lisp/"))
   (normal-top-level-add-subdirs-to-load-path))
 
@@ -72,6 +68,7 @@
 (require 'modes)
 (require 'keys)
 (require 'hooks)
+(require 'org-config)
 
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))

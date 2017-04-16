@@ -4,25 +4,27 @@
 
 ;;; code:
 (defun indent-buffer ()
-  "indent whole buffer"
+  "Indent whole buffer."
   (interactive)
   (delete-trailing-whitespace)
   (indent-region (point-min) (point-max) nil)
   (untabify (point-min) (point-max)))
 
 (require 'crux)
-(defun god-cursor-update ()
-  "Change the cursor to box when god-mode is enabled and to bar when inserting."
-  (setq cursor-type (if (or god-local-mode buffer-read-only)
-                        'box
-                      'bar)))
+
+(defun god-cursor-on ()
+  (setq cursor-type 'box))
+
+(defun god-cursor-off ()
+  (setq cursor-type 'hbar))
+
 (defun flash-bell ()
   "A friendlier visual bell effect."
   (invert-face 'mode-line)
   (run-with-timer 0.1 nil 'invert-face 'mode-line))
 
 (defun smart-kill-line ()
-  "Kill to the end of the line and kill whole line on the next keypress"
+  "Kill to the end of the line and kill whole line on the next keypress."
   (interactive)
   (let ((orig-point (point)))
     (move-end-of-line 1)
