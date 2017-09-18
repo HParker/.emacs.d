@@ -3,14 +3,14 @@
 ;; Provides functions for use later
 
 ;;; code:
+(require 'crux)
+
 (defun indent-buffer ()
   "Indent whole buffer."
   (interactive)
   (delete-trailing-whitespace)
   (indent-region (point-min) (point-max) nil)
   (untabify (point-min) (point-max)))
-
-(require 'crux)
 
 (defun god-cursor-on ()
   (setq cursor-type 'box))
@@ -22,18 +22,6 @@
   "A friendlier visual bell effect."
   (invert-face 'mode-line)
   (run-with-timer 0.1 nil 'invert-face 'mode-line))
-
-(defun smart-kill-line ()
-  "Kill to the end of the line and kill whole line on the next keypress."
-  (interactive)
-  (let ((orig-point (point)))
-    (move-end-of-line 1)
-    (if (= orig-point (point))
-        (crux-kill-whole-line)
-      (progn
-        (goto-char orig-point)
-        (kill-line))
-      )))
 
 (defun unique-lines-in-region (start end)
     "Find duplicate lines in region START to END keeping first occurrence."

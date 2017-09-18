@@ -4,20 +4,17 @@
 
 ;;; code:
 ;; god keys
-(global-set-key (kbd "<escape>") (lambda () (interactive) (god-local-mode-resume)))
 (define-key god-local-mode-map (kbd "i") (lambda () (interactive) (god-local-mode-pause)))
 (define-key god-local-mode-map (kbd ".") 'repeat)
 
-;; Window move
-(define-key god-local-mode-map (kbd "B") 'windmove-left)
-(define-key god-local-mode-map (kbd "F") 'windmove-right)
-(define-key god-local-mode-map (kbd "P") 'windmove-up)
-(define-key god-local-mode-map (kbd "N") 'windmove-down)
+(key-chord-define-global "fj" (lambda () (interactive) (god-local-mode-resume)))
+(key-chord-define-global "sv" (lambda () (interactive) (save-some-buffers 1)))
+
+(key-chord-mode +1)
 
 ;; regular key bindings
-(global-set-key (kbd "C-z")     (lambda () (interactive) (god-local-mode-resume)))
-(global-set-key (kbd "C-Z")     (lambda () (interactive) (god-local-mode-resume)))
 (global-set-key (kbd "M-;")     #'comment-or-uncomment-region)
+(global-set-key (kbd "C-x b")   #'ivy-switch-buffer)
 (global-set-key (kbd "C-u")     #'counsel-yank-pop)
 (global-set-key (kbd "M-u")     #'undo-tree-visualize)
 (global-set-key (kbd "M-s")     #'counsel-projectile-ag)
@@ -32,8 +29,8 @@
 (global-set-key (kbd "M-x")     #'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-j")     #'avy-goto-word-1)
-(global-set-key (kbd "S-r")     #'recompile)
-(global-set-key (kbd "C-k")     #'smart-kill-line)
+(global-set-key (kbd "s-r")     #'recompile)
+(global-set-key (kbd "C-k")     #'crux-smart-kill-line)
 (global-set-key (kbd "M-%")     #'anzu-query-replace)
 
 ;; CRUX bindings

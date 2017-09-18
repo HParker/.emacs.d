@@ -23,6 +23,9 @@
              '("\\.\\(?:gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode))
 
 (add-to-list 'auto-mode-alist
+             '("Dangerfile" . ruby-mode))
+
+(add-to-list 'auto-mode-alist
              '("\\.\\(?:tmpl\\|erb\\|mustache\\|djhtml\\)\\'" . web-mode))
 
 (delete-selection-mode 1)
