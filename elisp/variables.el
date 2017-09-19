@@ -42,5 +42,7 @@
 
 (setq tramp-default-method "ssh")
 
+(setq elm-format-on-save t)
+
 (provide 'variables)
 ;; variables.el ends here
