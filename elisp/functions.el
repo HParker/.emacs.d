@@ -1,4 +1,4 @@
-;;; functions.el --- function declarations
+;; functions.el --- function declarations
 ;;; Commentary:
 ;; Provides functions for use later
 

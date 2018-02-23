@@ -4,7 +4,7 @@
 
 ;;; code:
 (yas-global-mode)
-(counsel-projectile-on)
+(counsel-projectile-mode)
 (projectile-global-mode)
 (undo-tree-mode)
 (global-anzu-mode)
