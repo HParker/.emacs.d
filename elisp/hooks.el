@@ -20,11 +20,8 @@
 
 (add-hook 'ruby-mode-hook 'robe-mode)
 (add-hook 'ruby-mode-hook 'rbenv-use-corresponding)
-(add-hook 'ruby-mode-hook 'rubocop-mode)
 
-(add-hook 'ruby-mode-hook 'robe-mode)
 (add-hook 'enh-yaruby-mode-hook 'rbenv-use-corresponding)
-(add-hook 'ruby-mode-hook 'rubocop-mode)
 
 (add-hook 'rust-mode-hook 'racer-mode)
 (add-hook 'racer-mode-hook 'eldoc-mode)

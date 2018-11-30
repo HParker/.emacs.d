@@ -5,7 +5,9 @@
 ;;; code:
 (yas-global-mode)
 (counsel-projectile-mode)
-(projectile-global-mode)
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c C-p") 'projectile-command-map)
 (undo-tree-mode)
 (global-anzu-mode)
 

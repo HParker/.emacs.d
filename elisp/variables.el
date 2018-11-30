@@ -21,9 +21,6 @@
       auto-save-file-name-transforms
       `((".*" ,"~/.emacs.d/.saves/" t)))
 
-
-(setq counsel-ag-base-command "rg --no-heading --smart-case %s")
-
 (setq whitespace-line-column 80 ;; limit line length
       whitespace-style '(face tempty abs lines-tail trailing))
 

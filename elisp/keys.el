@@ -17,7 +17,7 @@
 (global-set-key (kbd "C-x b")   #'ivy-switch-buffer)
 (global-set-key (kbd "C-u")     #'counsel-yank-pop)
 (global-set-key (kbd "M-u")     #'undo-tree-visualize)
-(global-set-key (kbd "M-s")     #'counsel-projectile-ag)
+(global-set-key (kbd "M-s")     #'counsel-projectile-rg)
 (global-set-key (kbd "C-s")     #'swiper)
 (global-set-key (kbd "C-=")     #'er/expand-region)
 (global-set-key (kbd "C-c b")   #'magit-blame)
