@@ -43,6 +43,9 @@
 (eval-after-load 'company
   '(push 'company-robe company-backends))
 
+(with-eval-after-load 'company
+  (add-to-list 'company-backends 'company-elm))
+
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
 (defadvice web-mode-highlight-part (around tweak-jsx activate)
   (if (equal web-mode-content-type "jsx")

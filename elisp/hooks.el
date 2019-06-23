@@ -3,6 +3,11 @@
 ;; Provides hook configuration
 
 ;;; code:
+(add-hook 'go-mode-hook
+          (lambda ()
+            (setq indent-tabs-mode 1)
+            (setq tab-width 2)))
+
 (add-hook 'god-mode-enabled-hook 'god-cursor-on)
 (add-hook 'god-mode-disabled-hook 'god-cursor-off)
 
@@ -29,7 +34,6 @@
 (add-hook 'racer-mode-hook 'company-mode)
 
 (add-hook 'flycheck-mode-hook 'flycheck-rust-setup)
-
 
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
