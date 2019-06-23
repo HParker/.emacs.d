@@ -5,7 +5,7 @@
 (org-babel-do-load-languages
  (quote org-babel-load-languages)
  (quote ((emacs-lisp . t)
-         (sh . t)
+         (shell . t)
          (calc . t)
          (ruby . t)
          (python . t))))
