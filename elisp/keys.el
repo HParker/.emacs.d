@@ -9,7 +9,7 @@
 
 (key-chord-define-global "fj" (lambda () (interactive) (god-local-mode-resume)))
 (key-chord-define-global "sv" (lambda () (interactive) (save-some-buffers 1)))
-
+(key-chord-define-global "gh" (lambda () (interactive) (copy-path)))
 (key-chord-mode +1)
 
 ;; regular key bindings

@@ -5,6 +5,9 @@
 ;;; code:
 (require 'crux)
 
+(defun copy-path ()
+  (kill-new (buffer-file-name)))
+
 (defun indent-buffer ()
   "Indent whole buffer."
   (interactive)

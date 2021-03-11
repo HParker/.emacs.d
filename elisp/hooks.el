@@ -26,7 +26,7 @@
 (add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
 (add-hook 'ruby-mode-hook 'rbenv-use-corresponding)
 
-(add-hook 'enh-yaruby-mode-hook 'rbenv-use-corresponding)
+;; (add-hook 'enh-yaruby-mode-hook 'rbenv-use-corresponding)
 
 (add-hook 'rust-mode-hook 'racer-mode)
 (add-hook 'racer-mode-hook 'eldoc-mode)
