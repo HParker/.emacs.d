@@ -19,7 +19,7 @@
 
 (setq projectile-mode-line '(:eval (format " [%s]" (projectile-project-name))))
 (setq rm-blacklist
-      (quote (" WS" " SP" " Fly" " company" " RuboCop" " ," " robe" " yas" " Anzu" " God")))
+      (quote (" WS" " SP" " Fly" " company" " RuboCop" " ," " robe" " yas" " Anzu" " God", "ElDoc")))
 
 (provide 'styles)
 ;; styles.el ends here

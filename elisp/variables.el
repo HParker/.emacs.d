@@ -15,13 +15,16 @@
 (setq enh-ruby-add-encoding-comment-on-save nil)
 (setq default-directory "~/")
 
+(setq transient-values-file "~/.emacs.d/magit-vars/vars")
+(setq magit-log-arguments `("-n=10"))
+
 ;; move autosaves
 (setq backup-directory-alist
       `((".*" . ,"~/.emacs.d/.saves/"))
       auto-save-file-name-transforms
       `((".*" ,"~/.emacs.d/.saves/" t)))
 
-(setq whitespace-line-column 80 ;; limit line length
+(setq whitespace-line-column 120 ;; limit line length
       whitespace-style '(face tempty abs lines-tail trailing))
 
 (setq visible-bell nil
@@ -40,6 +43,7 @@
 (setq tramp-default-method "ssh")
 
 (setq elm-format-on-save t)
+
 
 (provide 'variables)
 ;; variables.el ends here

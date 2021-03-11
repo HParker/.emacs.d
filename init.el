@@ -15,10 +15,12 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-(package-initialize)
+
+(require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
+(cask-initialize)
+
 (setq initial-scratch-message ";; ╔═╗┌─┐┬─┐┌─┐┌┬┐┌─┐┬ ┬\n;; ╚═╗│  ├┬┘├─┤ │ │  ├─┤\n;; ╚═╝└─┘┴└─┴ ┴ ┴ └─┘┴ ┴\n")
 (setq custom-file "~/.emacs.d/.emacs-custom.el")
-(load custom-file 'noerror)
 
 (setq user-full-name "Adam Hess"
       user-mail-address "adamhess1991@gmail.com")
@@ -72,9 +74,6 @@
 
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
-
-(eval-after-load 'company
-  '(push 'company-robe company-backends))
 
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))

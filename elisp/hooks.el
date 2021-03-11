@@ -23,17 +23,13 @@
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-(add-hook 'ruby-mode-hook 'robe-mode)
+(add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
 (add-hook 'ruby-mode-hook 'rbenv-use-corresponding)
 
 (add-hook 'enh-yaruby-mode-hook 'rbenv-use-corresponding)
 
 (add-hook 'rust-mode-hook 'racer-mode)
 (add-hook 'racer-mode-hook 'eldoc-mode)
-
-(add-hook 'racer-mode-hook 'company-mode)
-
-(add-hook 'flycheck-mode-hook 'flycheck-rust-setup)
 
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 

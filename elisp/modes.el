@@ -8,7 +8,6 @@
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c C-p") 'projectile-command-map)
-(undo-tree-mode)
 (global-anzu-mode)
 
 (flyspell-mode t)
@@ -40,10 +39,10 @@
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
-(eval-after-load 'company
-  '(push 'company-robe company-backends))
-
 (with-eval-after-load 'company
+  (add-to-list 'company-backends 'company-elm)
+  (add-to-list 'company-backends 'company-irony)
+  (add-to-list 'company-backends 'company-lsp)
   (add-to-list 'company-backends 'company-elm))
 
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
@@ -60,11 +59,7 @@
   (flycheck-mode +1)
   (setq flycheck-check-syntax-automatically '(save mode-enabled))
   (eldoc-mode +1)
-  (tide-hl-identifier-mode +1)
-  ;; company is an optional dependency. You have to
-  ;; install it separately via package-install
-  ;; `M-x package-install [ret] company`
-  (company-mode +1))
+  (tide-hl-identifier-mode +1))
 
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)
