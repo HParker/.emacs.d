@@ -3,7 +3,7 @@
 ;; Provides functions for use later
 
 ;;; code:
-(require 'crux)
+;; (require 'crux)
 
 (defun copy-path ()
   (kill-new (buffer-file-name)))

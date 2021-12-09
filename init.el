@@ -17,6 +17,8 @@
 ;; You may delete these explanatory comments.
 (require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
 (cask-initialize)
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+(set-frame-font "Fira Code")
 
 (setq initial-scratch-message ";; ╔═╗┌─┐┬─┐┌─┐┌┬┐┌─┐┬ ┬\n;; ╚═╗│  ├┬┘├─┤ │ │  ├─┤\n;; ╚═╝└─┘┴└─┴ ┴ ┴ └─┘┴ ┴\n")
 (setq custom-file "~/.emacs.d/.emacs-custom.el")
@@ -70,6 +72,7 @@
 (require 'keys)
 (require 'hooks)
 (require 'org-config)
+(require 'dotal)
 
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
