@@ -1,86 +1,108 @@
-;;; init.el --- Adam's top level config
-;;
-;; Author: Adam Hess <adamhess1991@gmail.com>
-;; Have fun.
-;;
-;;; Commentary:
-;; Trying to make the most helpful emacs I can.
-;;
-;;; License:
-;; MIT
-;;; code:
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 5))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
 
+(setq package-enable-at-startup nil)
 
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-(require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
-(cask-initialize)
-(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
-(set-frame-font "Fira Code")
+(straight-use-package 'selectrum)
+(straight-use-package 'crux)
+(straight-use-package 'doom-themes)
+(straight-use-package 'multiple-cursors)
+(straight-use-package 'flycheck)
+(straight-use-package 'exec-path-from-shell)
+(straight-use-package 'projectile)
 
-(setq initial-scratch-message ";; ╔═╗┌─┐┬─┐┌─┐┌┬┐┌─┐┬ ┬\n;; ╚═╗│  ├┬┘├─┤ │ │  ├─┤\n;; ╚═╝└─┘┴└─┴ ┴ ┴ └─┘┴ ┴\n")
-(setq custom-file "~/.emacs.d/.emacs-custom.el")
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(exec-path-from-shell-initialize)
 
-(setq user-full-name "Adam Hess"
-      user-mail-address "adamhess1991@gmail.com")
+(add-hook 'after-init-hook #'global-flycheck-mode)
 
-;; Always load newest byte code
-;; (setq load-prefer-newer t)
+(selectrum-mode +1)
 
-;; reduce the frequency of garbage collection by making it happen on
-;; each 50MB of allocated data (the default is on every 0.76MB)
-(setq gc-cons-threshold 50000000)
+;; Theme
+(setq inhibit-startup-message t)
+(global-whitespace-mode t)
 
-;; warn when opening files bigger than 100MB
-(setq large-file-warning-threshold 100000000)
+(blink-cursor-mode 0)
+(delete-selection-mode 1)
 
-;; enable y/n answers
-(fset 'yes-or-no-p 'y-or-n-p)
-
-;; more useful frame title, that show either a file or a
-;; buffer name (if the buffer isn't visiting a file)
-(setq frame-title-format
-      '((:eval (if (buffer-file-name)
-                   (abbreviate-file-name (buffer-file-name))
-                 "%b"))))
-
-;; Newline at end of file
-(setq require-final-newline t)
-
-(let ((default-directory "/usr/local/share/emacs/site-lisp/"))
-  (normal-top-level-add-subdirs-to-load-path))
-
-(if (eq system-type 'darwin)
+(toggle-frame-maximized)
+(if (display-graphic-p)
     (progn
-      (setq ispell-program-name "/usr/local/bin/ispell")
-      (require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el"))
-  (progn
-    (setq-default ispell-program-name "/usr/bin/aspell")
-    (require 'cask "~/.cask/cask.el")))
+      (tool-bar-mode -1)
+      (scroll-bar-mode -1)
+      (fringe-mode 10)))
+(menu-bar-mode -1)
+
+(load-theme 'doom-one t)
 
 
-(cask-initialize)
+;; move autosaves
+(setq backup-directory-alist
+      `((".*" . ,"~/.emacs.d/.saves/"))
+      auto-save-file-name-transforms
+      `((".*" ,"~/.emacs.d/.saves/" t)))
 
-(add-to-list 'exec-path "/usr/local/bin")
-(add-to-list 'load-path "~/.emacs.d/elisp/")
-(require 'functions)
-(require 'variables)
-(require 'styles)
-(require 'modes)
-(require 'keys)
-(require 'hooks)
-(require 'org-config)
-(require 'dotal)
 
-(when (fboundp 'windmove-default-keybindings)
-  (windmove-default-keybindings))
+(defun flash-bell ()
+  "A friendlier visual bell effect."
+  (invert-face 'mode-line)
+  (run-with-timer 0.1 nil 'invert-face 'mode-line))
 
-(when (memq window-system '(mac ns))
-  (exec-path-from-shell-initialize))
+(setq visible-bell nil
+      ring-bell-function 'flash-bell)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(read-buffer-completion-ignore-case t)
+ '(read-file-name-completion-ignore-case t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 
-(provide 'init)
-;;; init.el ends here
-(put 'upcase-region 'disabled nil)
-(put 'downcase-region 'disabled nil)
+
+(global-set-key (kbd "M-;")     #'comment-or-uncomment-region)
+
+(global-set-key (kbd "C-k")     #'crux-smart-kill-line)
+(global-set-key [remap move-beginning-of-line] #'crux-move-beginning-of-line)
+(global-set-key (kbd "C-o")                    #'crux-smart-open-line)
+
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C->") 'mc/mark-all-like-this)
+
+
+(defun unique-lines-in-region (start end)
+    "Find duplicate lines in region START to END keeping first occurrence."
+    (interactive "*r")
+    (save-excursion
+      (let ((end (copy-marker end)))
+        (while
+            (progn
+              (goto-char start)
+              (re-search-forward "^\\(.*\\)\n\\(\\(.*\n\\)*\\)\\1\n" end t))
+          (replace-match "\\1\n\\2")))))
+
+(defun unique-lines-in-buffer ()
+  "Delete duplicate lines in buffer and keep first occurrence."
+  (interactive "*")
+  (unique-lines-in-region (point-min) (point-max)))
+
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+
