@@ -14,6 +14,7 @@
 (setq package-enable-at-startup nil)
 
 (straight-use-package 'selectrum)
+(straight-use-package 'selectrum-prescient)
 (straight-use-package 'crux)
 (straight-use-package 'doom-themes)
 (straight-use-package 'multiple-cursors)
@@ -29,9 +30,16 @@
 
 (selectrum-mode +1)
 
+;; to make sorting and filtering more intelligent
+(selectrum-prescient-mode +1)
+
+;; to save your command history on disk, so the sorting gets more
+;; intelligent over time
+(prescient-persist-mode +1)
+
 ;; Theme
 (setq inhibit-startup-message t)
-(global-whitespace-mode t)
+;; (global-whitespace-mode t)
 
 (blink-cursor-mode 0)
 (delete-selection-mode 1)
@@ -104,5 +112,3 @@
   (unique-lines-in-region (point-min) (point-max)))
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-
-
