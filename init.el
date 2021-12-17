@@ -21,6 +21,15 @@
 (straight-use-package 'flycheck)
 (straight-use-package 'exec-path-from-shell)
 (straight-use-package 'projectile)
+(straight-use-package 'anzu)
+(straight-use-package 'consult)
+(straight-use-package 'marginalia)
+
+(marginalia-mode)
+
+(global-anzu-mode +1)
+(global-set-key [remap query-replace] 'anzu-query-replace)
+(global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
 
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
@@ -85,6 +94,9 @@
 
 
 (global-set-key (kbd "M-;")     #'comment-or-uncomment-region)
+
+(global-set-key (kbd "M-s")     #'consult-ripgrep)
+(global-set-key (kbd "C-s")     #'consult-line)
 
 (global-set-key (kbd "C-k")     #'crux-smart-kill-line)
 (global-set-key [remap move-beginning-of-line] #'crux-move-beginning-of-line)
